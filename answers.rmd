@@ -1,0 +1,66 @@
+# Questions and Answers:
+
+## Aditi Manjunath
+
+### 1. What are the different ways to create a vector in R?
+#### A: 
+#### 1) c() function
+####    vector <- c(1, 2, 3)
+#### 2) seq() function:
+####    vector <- seq(1, 5)
+#### 3) rep() function:
+####    vector <- rep(1, times = 10)
+### 2. Create the following vector and check the class
+### (‘x’,’x’, ‘x’, 1,3,5,7,9,2,4,6,8,10)
+#### A: vector <- c('x','x','x',1,3,5,7,9,2,4,6,8,10)
+####    classVector <- class(vector)
+####    print(vector)
+####    print(classVector)
+### 3. Create a vector of positive odd integers less than 100
+#### A: vector2 <- seq(from = 1, to = 99, by = 2)
+####    print(vector2)
+### 4. Remove the values greater than 60 and less than 80
+#### A: vector2_removed <- vector2[vector2 <= 60 | vector2 >= 80]
+####    print(vector2_removed)
+### 5. Write a function to return standard deviation, mean, and median of the vector.
+##### A: calculate_values <- function(vector) {
+#####  values <- list(
+#####   mean = mean(vector),
+#####   median = median(vector),
+#####   standard_deviation = sd(vector)
+#####  )
+##### return(values)
+##### }
+### 6. Create two matrices of the form from the given set of numbers in two ways x1 = {2,3,7,1,6,2,3,5,1} and x2 = {3,2,9,0,7,8,5,8,2}
+##### x1 <- c(2, 3, 7, 1, 6, 2, 3, 5, 1)
+##### x2 <- c(3, 2, 9, 0, 7, 8, 5, 8, 2)
+##### matrix1 <- matrix(data = c(x1, x2), nrow = 3)
+##### matrix2 <- matrix(data = c(x1, x2), nrow = 3)
+##### print(matrix1)
+##### print(matrix2)
+### 7. Find the matrix product
+##### result <- matrix1 %*% t(matrix2)
+##### print(result)
+### 8. Find the class of 'iris' dataframe, find the class of all columns of 
+### iris' get the summary. Get the rownames, get column names.
+### Get the number of rows and number of columns
+##### data(iris)
+##### class_iris <- class(iris)
+##### print(class_iris)
+##### class_columns <- sapply(iris, class)
+##### print(class_columns)
+##### iris_summary <- summary(iris)
+##### print(iris_summary)
+##### iris_row_names <- rownames(iris)
+##### print(iris_row_names)
+##### iris_column_names <- colnames(iris)
+##### print(iris_column_names)
+##### num_rows <- nrow(iris)
+##### num_cols <- ncol(iris)
+##### print(paste("Number of rows are ", num_rows))
+##### print(paste("Number of columns are ", num_cols))
+### 9. Get the last two rows inthe last 2 columns from iris dataset.
+#### rows2_last <- tail(iris, 2)
+#### cols2_last <- iris[, (ncol(iris) - 1):ncol(iris)]
+#### result <- rows2_last[, (ncol(rows2_last) - 1):ncol(rows2_last)]
+#### print(result)
